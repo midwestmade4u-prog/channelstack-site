@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — ChannelStack</title>
+<link rel="icon" type="image/png" href="/logo-profile-800x800.png">
+<link rel="shortcut icon" type="image/png" href="/logo-profile-800x800.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cyan: #00C9FF;
+    --bg: #0D1117;
+    --surface: #161B22;
+    --border: #21262D;
+    --white: #FFFFFF;
+    --muted: #AAAAAA;
+    --dim: #555555;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(13,17,23,0.95);
+    backdrop-filter: blur(8px);
+  }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-icon {
+    width: 36px; height: 36px; background: var(--cyan); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .logo-bars { display: flex; flex-direction: column; gap: 3px; padding: 7px 8px; width: 100%; }
+  .bar { height: 4px; background: #0D1117; border-radius: 2px; }
+  .bar-1 { width: 100%; }
+  .bar-2 { width: 68%; }
+  .bar-3 { width: 100%; }
+  .bar-4 { width: 100%; }
+  .logo-text { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; }
+  .logo-text span { color: var(--cyan); }
+
+  /* LOGIN CARD */
+  .login-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+  }
+
+  .login-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px;
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+  }
+
+  .login-logo {
+    width: 64px; height: 64px; background: var(--cyan); border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px;
+  }
+  .login-logo-bars { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; width: 100%; }
+  .login-logo-bar { height: 5px; background: #0D1117; border-radius: 2px; }
+
+  .login-card h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .login-card h1 span { color: var(--cyan); }
+
+  .login-card .subtitle {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 36px;
+    line-height: 1.6;
+  }
+
+  .btn-primary {
+    display: block;
+    width: 100%;
+    background: var(--cyan);
+    color: #0D1117;
+    font-weight: 700;
+    padding: 16px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: opacity 0.2s;
+    margin-bottom: 16px;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+
+  .btn-tiktok {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    background: #000000;
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 16px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid #333;
+    transition: background 0.2s;
+    margin-bottom: 16px;
+  }
+  .btn-tiktok:hover { background: #111; }
+
+  .btn-secondary {
+    display: block;
+    width: 100%;
+    background: transparent;
+    color: var(--white);
+    font-weight: 600;
+    padding: 16px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--cyan); }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    color: var(--dim);
+    font-size: 13px;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .login-note {
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--dim);
+    line-height: 1.6;
+  }
+  .login-note a { color: var(--cyan); text-decoration: none; }
+
+  footer {
+    text-align: center; padding: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px; color: var(--dim);
+  }
+  footer a { color: var(--dim); text-decoration: none; }
+
+  @media (max-width: 640px) {
+    nav { padding: 16px 20px; }
+    .login-card { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-icon">
+      <div class="logo-bars">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+        <div class="bar bar-4"></div>
+      </div>
+    </div>
+    <div class="logo-text">Channel<span>Stack</span></div>
+  </a>
+</nav>
+
+<!-- LOGIN CARD -->
+<div class="login-wrapper">
+  <div class="login-card">
+
+    <div class="login-logo">
+      <div class="login-logo-bars">
+        <div class="login-logo-bar" style="width:100%;"></div>
+        <div class="login-logo-bar" style="width:68%;"></div>
+        <div class="login-logo-bar" style="width:100%;"></div>
+        <div class="login-logo-bar" style="width:100%;"></div>
+      </div>
+    </div>
+
+    <h1>Channel<span>Stack</span></h1>
+    <p class="subtitle">Sign in to access your ChannelStack account and automation dashboard.</p>
+
+    <a href="https://www.tiktok.com/v2/auth/authorize/?client_key=TIKTOK_CLIENT_KEY&scope=user.info.basic%2Cvideo.list&response_type=code&redirect_uri=https%3A%2F%2Fchannelstack.net%2Fcallback.html&state=cslogin" class="btn-tiktok">
+      <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M38.4 10.56A10.56 10.56 0 0 1 28.32 0h-7.68v32.64a5.28 5.28 0 1 1-5.76-5.25V19.7A13.44 13.44 0 1 0 28 32.64V16.32a18.18 18.18 0 0 0 10.4 3.24V12A10.6 10.6 0 0 1 38.4 10.56Z" fill="currentColor"/></svg>
+      Continue with TikTok
+    </a>
+
+    <div class="divider">or</div>
+
+    <a href="https://www.skool.com/channelstack-2416" class="btn-primary">
+      Sign In with ChannelStack →
+    </a>
+
+    <a href="https://www.skool.com/channelstack-2416" class="btn-secondary" style="margin-top:12px;">
+      Create an Account
+    </a>
+
+    <p class="login-note">
+      ChannelStack membership is managed through our Skool community.<br>
+      By signing in you agree to our <a href="/terms.html">Terms of Service</a> and <a href="/privacy.html">Privacy Policy</a>.
+    </p>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 ChannelStack &nbsp;·&nbsp; <a href="mailto:matt@channelstack.net">matt@channelstack.net</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms of Service</a>
+</footer>
+
+</body>
+</html>
