@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChannelStack — Build. Automate. Scale.</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWN65WFMNY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MWN65WFMNY');
+</script>
+<link rel="icon" type="image/png" href="/logo-profile-800x800.png">
+<link rel="shortcut icon" type="image/png" href="/logo-profile-800x800.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cyan: #00C9FF;
+    --bg: #0D1117;
+    --surface: #161B22;
+    --border: #21262D;
+    --white: #FFFFFF;
+    --muted: #AAAAAA;
+    --dim: #555555;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(13,17,23,0.95);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-icon {
+    width: 36px; height: 36px; background: var(--cyan); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .logo-bars { display: flex; flex-direction: column; gap: 3px; padding: 7px 8px; width: 100%; }
+  .bar { height: 4px; background: #0D1117; border-radius: 2px; }
+  .bar-1 { width: 100%; }
+  .bar-2 { width: 68%; }
+  .bar-3 { width: 100%; }
+  .bar-4 { width: 100%; }
+  .logo-text { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; }
+  .logo-text span { color: var(--cyan); }
+  .nav-cta {
+    background: var(--cyan); color: #0D1117; font-weight: 700;
+    padding: 10px 24px; border-radius: 8px; text-decoration: none;
+    font-size: 14px; transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 100px 24px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .label {
+    display: inline-block;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--cyan);
+    border: 1px solid rgba(0,201,255,0.3);
+    padding: 6px 16px; border-radius: 100px; margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-size: clamp(44px, 7vw, 80px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    margin-bottom: 28px;
+  }
+  .hero h1 .accent { color: var(--cyan); }
+  .hero p {
+    font-size: 20px; color: var(--muted);
+    max-width: 600px; margin: 0 auto 48px;
+    line-height: 1.7;
+  }
+  .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--cyan); color: #0D1117; font-weight: 700;
+    padding: 16px 36px; border-radius: 10px; text-decoration: none;
+    font-size: 16px; transition: opacity 0.2s; display: inline-block;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-secondary {
+    background: transparent; color: var(--white); font-weight: 600;
+    padding: 16px 36px; border-radius: 10px; text-decoration: none;
+    font-size: 16px; border: 1px solid var(--border); transition: border-color 0.2s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--cyan); }
+  .hero-note { margin-top: 20px; font-size: 13px; color: var(--dim); }
+
+  /* SOCIAL PROOF BAR */
+  .proof-bar {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 48px;
+    display: flex; justify-content: center; gap: 64px; flex-wrap: wrap;
+  }
+  .proof-stat { text-align: center; }
+  .proof-stat .num { font-size: 32px; font-weight: 800; color: var(--cyan); }
+  .proof-stat .lbl { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* SECTION */
+  section { padding: 80px 24px; max-width: 1000px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--cyan); margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: clamp(28px, 4vw, 44px); font-weight: 800;
+    letter-spacing: -0.8px; margin-bottom: 16px; line-height: 1.15;
+  }
+  .section-sub { font-size: 18px; color: var(--muted); max-width: 560px; margin-bottom: 48px; line-height: 1.7; }
+
+  /* WHAT YOU GET */
+  .modules-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+  }
+  .module-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 28px;
+    transition: border-color 0.2s;
+  }
+  .module-card:hover { border-color: rgba(0,201,255,0.4); }
+  .module-num { font-size: 11px; font-weight: 600; color: var(--cyan); letter-spacing: 0.1em; margin-bottom: 12px; }
+  .module-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+  .module-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+  /* THE PROOF */
+  .proof-section { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 48px; }
+  .proof-section p { font-size: 17px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  .proof-section strong { color: var(--white); }
+
+  /* PRICING */
+  .pricing-card {
+    background: var(--surface); border: 1px solid var(--cyan);
+    border-radius: 16px; padding: 48px; max-width: 480px; margin: 0 auto;
+    text-align: center;
+  }
+  .price { font-size: 64px; font-weight: 800; color: var(--cyan); line-height: 1; }
+  .price-period { font-size: 18px; color: var(--muted); margin-bottom: 32px; }
+  .pricing-features { text-align: left; margin-bottom: 36px; }
+  .pricing-features li {
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+    font-size: 15px; color: var(--muted); list-style: none;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .pricing-features li::before { content: "✓"; color: var(--cyan); font-weight: 700; flex-shrink: 0; }
+  .founding-badge {
+    background: rgba(0,201,255,0.1); border: 1px solid rgba(0,201,255,0.3);
+    border-radius: 8px; padding: 12px 20px; margin-bottom: 28px;
+    font-size: 14px; color: var(--cyan); font-weight: 600;
+  }
+
+  /* FOR WHO */
+  .for-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .for-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
+  .for-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+  .for-card ul { list-style: none; }
+  .for-card ul li { font-size: 14px; color: var(--muted); padding: 6px 0; display: flex; gap: 10px; }
+  .for-card ul li::before { color: var(--cyan); flex-shrink: 0; }
+  .for-yes::before { content: "✓"; }
+  .for-no::before { content: "✕"; color: var(--dim) !important; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 16px; }
+  .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+  .faq-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+  .faq-item p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+  /* CTA FOOTER */
+  .cta-footer {
+    text-align: center; padding: 100px 24px;
+    border-top: 1px solid var(--border);
+  }
+  .cta-footer h2 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; letter-spacing: -1px; margin-bottom: 20px; }
+  .cta-footer p { font-size: 18px; color: var(--muted); margin-bottom: 40px; }
+
+  footer {
+    text-align: center; padding: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px; color: var(--dim);
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 16px 20px; }
+    .proof-bar { gap: 32px; padding: 24px 20px; }
+    .for-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon">
+      <div class="logo-bars">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+        <div class="bar bar-4"></div>
+      </div>
+    </div>
+    <div class="logo-text">Channel<span>Stack</span></div>
+  </a>
+  <div style="display:flex; gap:12px; align-items:center;">
+    <a href="/login" style="color:var(--dim); font-size:13px; text-decoration:none; padding:8px 12px;">Login</a>
+    <a href="https://www.skool.com/channelstack-2416" class="nav-cta">Join ChannelStack — $47/mo →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="label">🔴 Founding Members Open — Limited Spots</div>
+  <h1>3 Faceless YouTube Channels.<br><span class="accent">Zero Manual Work.</span></h1>
+  <p>I built an AI-powered automation system that scripts, produces, and uploads YouTube videos 24/7 — with no face, no editing, no team. Now I'm sharing the entire stack.</p>
+  <div class="cta-group">
+    <a href="https://www.skool.com/channelstack-2416" class="btn-primary">Join ChannelStack — $47/mo</a>
+    <a href="#proof" class="btn-secondary">See the proof →</a>
+  </div>
+  <p class="hero-note">Founding member rate locks in forever — price goes to $97/mo after 50 members.</p>
+</div>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-stat">
+    <div class="num">3</div>
+    <div class="lbl">Live Automated Channels</div>
+  </div>
+  <div class="proof-stat">
+    <div class="num">$0</div>
+    <div class="lbl">Spent on Editors or VAs</div>
+  </div>
+  <div class="proof-stat">
+    <div class="num">0 hrs</div>
+    <div class="lbl">Manual Editing Per Week</div>
+  </div>
+  <div class="proof-stat">
+    <div class="num">7+</div>
+    <div class="lbl">Videos Per Day, Auto-Posted</div>
+  </div>
+</div>
+
+<!-- WHAT YOU GET -->
+<section>
+  <div class="section-label">Inside the Community</div>
+  <h2 class="section-title">The complete system.<br>Not just the idea.</h2>
+  <p class="section-sub">Every module, script, and automation workflow I use — documented and ready to clone.</p>
+  <div class="modules-grid">
+    <div class="module-card">
+      <div class="module-num">MODULE 01</div>
+      <div class="module-title">The Channel Architecture</div>
+      <div class="module-desc">How to choose a niche, structure your channel, and pick content formats that the algorithm rewards — without ever showing your face.</div>
+    </div>
+    <div class="module-card">
+      <div class="module-num">MODULE 02</div>
+      <div class="module-title">The AI Script Engine</div>
+      <div class="module-desc">The exact GPT-4o prompt system I use to generate 60-second scripts with strong hooks, payoff-first openers, and viral potential built in.</div>
+    </div>
+    <div class="module-card">
+      <div class="module-num">MODULE 03</div>
+      <div class="module-title">Visuals on Autopilot</div>
+      <div class="module-desc">How I source and match footage using Adobe Stock + Pexels, auto-generate thumbnails, and add captions — all without touching a timeline.</div>
+    </div>
+    <div class="module-card">
+      <div class="module-num">MODULE 04</div>
+      <div class="module-title">The Upload Pipeline</div>
+      <div class="module-desc">GitHub Actions + YouTube API: how to schedule uploads, rotate titles, manage tokens, and keep 3 channels posting daily without a single manual click.</div>
+    </div>
+    <div class="module-card">
+      <div class="module-num">MODULE 05</div>
+      <div class="module-title">Analytics & Iteration</div>
+      <div class="module-desc">How to read YouTube Studio, identify what's working, and push updates to the script generator — so performance compounds over time.</div>
+    </div>
+    <div class="module-card">
+      <div class="module-num">MODULE 06</div>
+      <div class="module-title">Scaling to Channel #2 and #3</div>
+      <div class="module-desc">The exact playbook for spinning up a new channel from zero — new niche, new voice, new visuals — in under a day using the same infrastructure.</div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROOF -->
+<section id="proof" style="padding-top: 0;">
+  <div class="section-label">This Is Real</div>
+  <h2 class="section-title">Not a course about YouTube.<br>A system that <em style="font-style:italic; color:var(--cyan);">runs</em> YouTube.</h2>
+  <div class="proof-section">
+    <p>I'm not a YouTube guru. I don't have millions of subscribers. I'm a builder who got obsessed with one question: <strong>can a YouTube channel run itself?</strong></p>
+    <p>Turns out — yes. I've got <strong>3 channels posting 7+ videos a day</strong>, all generated by AI, rendered automatically, and uploaded via GitHub Actions on a schedule. No editors. No VAs. No manual work after setup.</p>
+    <p>The channels are in different niches. The system is the same. That's what I'm teaching inside ChannelStack — <strong>the stack, not the hype.</strong></p>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section style="padding-top: 0;">
+  <div class="section-label">Is This For You?</div>
+  <h2 class="section-title">Built for builders,<br>not beginners.</h2>
+  <div class="for-grid">
+    <div class="for-card">
+      <h4 style="color: var(--cyan);">✓ Great fit if you...</h4>
+      <ul>
+        <li class="for-yes">Want passive income from YouTube without being on camera</li>
+        <li class="for-yes">Are comfortable with basic tech (or willing to learn)</li>
+        <li class="for-yes">Want to own an asset that runs 24/7</li>
+        <li class="for-yes">Think in systems, not one-off tasks</li>
+        <li class="for-yes">Want to scale to multiple channels fast</li>
+      </ul>
+    </div>
+    <div class="for-card">
+      <h4 style="color: var(--dim);">✕ Not a fit if you...</h4>
+      <ul>
+        <li class="for-no">Want overnight results with zero effort</li>
+        <li class="for-no">Are looking for a "watch and get rich" course</li>
+        <li class="for-no">Don't want to understand how the system works</li>
+        <li class="for-no">Expect AdSense checks in week one</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section style="padding-top: 0; text-align: center;">
+  <div class="section-label">See It In Action</div>
+  <h2 class="section-title" style="text-align:center;">Watch the system explained<br>in under a minute.</h2>
+  <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:800px; margin:0 auto; border-radius:16px; border:1px solid #21262D; box-shadow:0 0 40px rgba(0,201,255,0.1);">
+    <iframe src="https://www.youtube.com/embed/SZkFxSp-tdk" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; border-radius:16px;" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section style="padding-top: 0;">
+  <div class="section-label">Pricing</div>
+  <h2 class="section-title" style="text-align:center;">Simple. No upsells.</h2>
+  <p style="text-align:center; color:var(--muted); font-size:16px; margin-bottom:24px;">A single video editor costs $300–500/mo. This system replaces that for $47.</p>
+  <div class="pricing-card">
+    <div class="founding-badge">🔥 Founding Member Rate — First 50 only</div>
+    <div class="price">$47</div>
+    <div class="price-period">/month · locks in forever</div>
+    <ul class="pricing-features">
+      <li>Full access to all 6 modules</li>
+      <li>The complete automation stack (scripts, prompts, workflows)</li>
+      <li>Weekly live Q&amp;A calls</li>
+      <li>Private community + direct access to me</li>
+      <li>All future modules included</li>
+      <li>Price locks at $47 — never increases for you</li>
+    </ul>
+    <a href="https://www.skool.com/channelstack-2416" class="btn-primary" style="display:block; text-align:center;">
+      Claim Founding Rate →
+    </a>
+    <p style="font-size:12px; color:var(--dim); margin-top:16px;">Founding rate for first 50 members only. Goes to $97/mo after. Cancel anytime.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-top: 0;">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">Common questions.</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h4>Do I need coding experience?</h4>
+      <p>No deep coding required. GitHub Actions uses simple YAML config files, and I provide templates you can copy and modify. If you can follow instructions and use ChatGPT, you can run this system.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How long until a channel starts making money?</h4>
+      <p>YouTube Partner Program requires 500 subscribers and 3,000 watch hours. With daily uploads, most channels hit this in 60–120 days. This isn't a get-rich-quick scheme — it's infrastructure that compounds.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What does it cost to run the system?</h4>
+      <p>Roughly $15–20/month per channel for AI API costs. No expensive software required. Most tools are free or have free tiers.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Is AI-generated content allowed on YouTube?</h4>
+      <p>Yes — with proper disclosure. YouTube requires labeling AI-generated content, which the system handles. All 3 of my channels are in good standing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FOOTER -->
+<div class="cta-footer">
+  <h2>Ready to build the<br><span style="color:var(--cyan);">system?</span></h2>
+  <p>Join before the founding rate disappears.</p>
+  <a href="https://www.skool.com/channelstack-2416" class="btn-primary">Join ChannelStack — $47/mo →</a>
+  <p style="margin-top:16px; font-size:13px; color:var(--dim);">Founding rate for first 50 members only. Goes to $97/mo after.</p>
+</div>
+
+<!-- EMAIL CAPTURE -->
+<section style="padding-top: 0; padding-bottom: 60px;">
+  <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 48px; text-align: center; max-width: 600px; margin: 0 auto;">
+    <div class="section-label" style="margin-bottom: 12px;">Free Updates</div>
+    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 12px;">Not ready to join yet?</h3>
+    <p style="color: var(--muted); margin-bottom: 28px; font-size: 15px;">Get weekly breakdowns of what's working across my 3 automated channels — free.</p>
+    <a href="https://channelstack.beehiiv.com/subscribe" class="btn-secondary" style="display:inline-block;">Get Free Weekly Updates →</a>
+    <p style="font-size: 12px; color: var(--dim); margin-top: 14px;">No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 ChannelStack · <a href="mailto:matt@channelstack.net" style="color:var(--dim); text-decoration:none;">matt@channelstack.net</a> · <a href="/privacy" style="color:var(--dim); text-decoration:none;">Privacy Policy</a> · <a href="/terms" style="color:var(--dim); text-decoration:none;">Terms of Service</a>
+</footer>
+
+</body>
+</html>
