@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — ChannelStack</title>
+<link rel="icon" type="image/png" href="/logo-profile-800x800.png">
+<link rel="shortcut icon" type="image/png" href="/logo-profile-800x800.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cyan: #00C9FF;
+    --bg: #0D1117;
+    --surface: #161B22;
+    --border: #21262D;
+    --white: #FFFFFF;
+    --muted: #AAAAAA;
+    --dim: #555555;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(13,17,23,0.95);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-icon {
+    width: 36px; height: 36px; background: var(--cyan); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .logo-bars { display: flex; flex-direction: column; gap: 3px; padding: 7px 8px; width: 100%; }
+  .bar { height: 4px; background: #0D1117; border-radius: 2px; }
+  .bar-1 { width: 100%; }
+  .bar-2 { width: 68%; }
+  .bar-3 { width: 100%; }
+  .bar-4 { width: 100%; }
+  .logo-text { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; }
+  .logo-text span { color: var(--cyan); }
+  .nav-cta {
+    background: var(--cyan); color: #0D1117; font-weight: 700;
+    padding: 10px 24px; border-radius: 8px; text-decoration: none;
+    font-size: 14px; transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* CONTENT */
+  .page-header {
+    padding: 64px 24px 48px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--cyan); margin-bottom: 16px;
+  }
+  .page-title {
+    font-size: clamp(32px, 5vw, 52px); font-weight: 800;
+    letter-spacing: -1px; margin-bottom: 16px; line-height: 1.1;
+  }
+  .page-meta { font-size: 14px; color: var(--dim); }
+
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cyan);
+    margin: 24px 0 10px;
+  }
+
+  p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  ul {
+    margin: 0 0 14px 0;
+    padding-left: 20px;
+  }
+
+  ul li {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 6px;
+  }
+
+  a {
+    color: var(--cyan);
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+
+  .highlight-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .highlight-box p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .warning-box {
+    background: rgba(255, 100, 50, 0.05);
+    border: 1px solid rgba(255, 100, 50, 0.25);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .warning-box p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  footer {
+    text-align: center; padding: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px; color: var(--dim);
+  }
+  footer a { color: var(--dim); text-decoration: none; }
+
+  @media (max-width: 640px) {
+    nav { padding: 16px 20px; }
+    .page-header { padding: 40px 20px 32px; }
+    .content { padding: 32px 20px 64px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-icon">
+      <div class="logo-bars">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+        <div class="bar bar-4"></div>
+      </div>
+    </div>
+    <div class="logo-text">Channel<span>Stack</span></div>
+  </a>
+  <div style="display:flex; gap:12px; align-items:center;">
+    <a href="/login" style="color:var(--muted); font-size:14px; font-weight:600; text-decoration:none; padding:10px 16px; border-radius:8px; border:1px solid var(--border);">Login</a>
+    <a href="https://www.skool.com/channelstack-2416" class="nav-cta">Join the Community →</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div style="display:flex; align-items:center; gap:16px; margin-bottom:24px;">
+    <div style="width:48px; height:48px; background:var(--cyan); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+      <div style="display:flex; flex-direction:column; gap:3px; padding:9px 10px; width:100%;">
+        <div style="height:4px; background:#0D1117; border-radius:2'x; width:100%;"></div>
+        <div style="height:4px; background:#0D1117; border-radius:2px; width:68%;"></div>
+        <div style="height:4px; background:#0D1117; border-radius:2px; width:100%;"></div>
+        <div style="height:4px; background:#0D1117; border-radius:2px; width:100%;"></div>
+      </div>
+    </div>
+    <span style="font-size:20px; font-weight:800; letter-spacing:-0.3px;">Channel<span style="color:var(--cyan);">Stack</span></span>
+  </div>
+  <div class="page-label">Legal</div>
+  <h1 class="page-title">Terms of Service</h1>
+  <p class="page-meta">Last updated: May 13, 2026 &nbsp;·&nbsp; Effective: May 13, 2026</p>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <div class="highlight-box">
+    <p>Please read these Terms of Service carefully before using ChannelStack. By accessing or using our service, you agree to be bound by these terms. If you do not agree to these terms, do not use ChannelStack.</p>
+  </div>
+
+  <div class="section">
+    <h2>1. Acceptance of Terms</h2>
+    <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("User," "you," or "your") and ChannelStack ("we," "us," or "our"), governing your access to and use of the ChannelStack platform, including our website at <a href="https://channelstack.net">channelstack.net</a>, our community at skool.com/channelstack, and all related tools, automation systems, and services (collectively, the "Service").</p>
+    <p>By creating an account, subscribing to ChannelStack, or using any part of the Service, you confirm that you are at least 18 years of age, have the legal capacity to enter into this agreement, and agree to be bound by these Terms and our <a href="/privacy">Privacy Policy</a>.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Description of Service</h2>
+    <p>ChannelStack is a multi-creator content automation platform that enables users to:</p>
+    <ul>
+      <li>Connect their TikTok and YouTube creator accounts via OAuth authorization</li>
+      <li>Automate the scripting, production, and publishing of faceless video content</li>
+      <li>Schedule and manage video posting across connected platforms</li>
+      <li>Access educational content, templates, and community support through our Skool community</li>
+      <li>Monitor channel performance and automation health through AI-powered dashboards and digest reports</li>
+    </ul>
+    <p>ChannelStack uses third-party APIs including the TikTok Content Posting API and YouTube Data API to deliver these services. Your use of the Service is subject to the applicable terms and policies of those third-party platforms in addition to these Terms.</p>
+  </div>
+
+  <div class="section">
+    <h2>3. Accounts and Eligibility</h2>
+
+    <h3>3.1 Account Registration</h3>
+    <p>To use ChannelStack, you must create an account via our Skool community platform. You agree to provide accurate, current, and complete information during registration and to keep your account information updated.</p>
+
+    <h3>3.2 Account Security</h3>
+    <p>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You agree to notify us immediately at <a href="mailto:matt@channelstack.net">matt@channelstack.net</a> if you suspect any unauthorized access to your account.</p>
+
+    <h3>3.3 One Account Per User</h3>
+    <p>Each subscription is for a single user. You may not share your account credentials or allow others to access the Service using your account. Enterprise or team arrangements require separate agreements.</p>
+
+    <h3>3.4 Platform Account Requirements</h3>
+    <p>To use ChannelStack's automation features, you must independently own and maintain valid TikTok and/or YouTube creator accounts in good standing. ChannelStack is not responsible for actions taken by TikTok or YouTube with respect to your accounts, including suspension, termination, or demonetization.</p>
+  </div>
+
+  <div class="section">
+    <h2>4. Subscription and Payment</h2>
+
+    <h3>4.1 Subscription Plans</h3>
+    <p>ChannelStack offers monthly subscription plans as described on our website. All fees are stated in U.S. dollars and are billed through our Skool community platform.</p>
+
+    <h3>4.2 Billing</h3>
+    <p>Subscriptions are billed monthly on a recurring basis. By providing your payment information, you authorize us (via Skool) to charge you the applicable subscription fee on a recurring monthly basis until you cancel.</p>
+
+    <h3>4.3 Founding Member Rate</h3>
+    <p>Founding Members who subscribe at the founding rate lock in that rate for as long as their subscription remains active and in good standing. The founding rate applies only to the subscription tier in effect at the time of founding membership and does not carry over to future higher-tier products.</p>
+
+    <h3>4.4 Cancellation</h3>
+    <p>You may cancel your subscription at any time through your Skool account settings. Cancellation takes effect at the end of your current billing period. No partial refunds are issued for unused portions of a subscription period.</p>
+
+    <h3>4.5 Refund Policy</h3>
+    <p>All subscription fees are non-refundable except where required by applicable law. If you believe a charge was made in error, contact us at <a href="mailto:matt@channelstack.net">matt@channelstack.net</a> within 14 days of the charge.</p>
+
+    <h3>4.6 Price Changes</h3>
+    <p>We reserve the right to change subscription pricing with at least 30 days' prior written notice. Founding Members are exempt from price increases as described in Section 4.3 above.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Acceptable Use Policy</h2>
+
+    <h3>5.1 Permitted Uses</h3>
+    <p>You may use ChannelStack solely for legitimate content creation and automation purposes on your own creator accounts, in compliance with these Terms and all applicable platform policies and laws.</p>
+
+    <h3>5.2 Prohibited Uses</h3>
+    <p>You agree not to use ChannelStack to:</p>
+    <ul>
+      <li>Violate TikTok's, YouTube's, or any other platform's Terms of Service, Community Guidelines, or Developer Policies</li>
+      <li>Post content that is illegal, defamatory, harassing, threatening, obscene, or that infringes any third-party intellectual property rights</li>
+      <li>Engage in spam, artificial inflation of metrics, or coordinated inauthentic behavior</li>
+      <li>Post content containing hate speech, graphic violence, or material that exploits, harms, or threatens minors</li>
+      <li>Impersonate any person, brand, or entity, or misrepresent your affiliation with any person or entity</li>
+      <li>Post false, misleading, or deceptive content including manipulated media or disinformation</li>
+      <li>Use the Service to access or post to accounts that you do not own or are not authorized to manage</li>
+      <li>Circumvent, disable, or interfere with any security features of the Service or connected platforms</li>
+      <li>Reverse engineer, decompile, or attempt to extract source code from the Service</li>
+      <li>Use the Service in any manner that could damage, overburden, or impair the Service or connected APIs</li>
+      <li>Resell, sublicense, or redistribute access to the Service without our prior written consent</li>
+    </ul>
+
+    <h3>5.3 Content Responsibility</h3>
+    <p>You are solely responsible for all content published through ChannelStack on your accounts. ChannelStack provides tools to automate publishing, but you retain full responsibility for ensuring that all content complies with applicable laws, platform policies, and community guidelines.</p>
+  </div>
+
+  <div class="section">
+    <h2>6. TikTok Platform Compliance</h2>
+    <p>ChannelStack integrates with TikTok's Content Posting API. By connecting your TikTok account to ChannelStack, you acknowledge and agree to the following:</p>
+    <ul>
+      <li>You authorize ChannelStack to post content to your TikTok account on your behalf using the permissions you grant via TikTok's OAuth process.</li>
+      <li>You remain solely responsible for all content published to your TikTok account through ChannelStack and for compliance with <a href="https://www.tiktok.com/legal/page/us/terms-of-service/en" target="_blank" rel="noopener">TikTok's Terms of Service</a> and <a href="https://www.tiktok.com/community-guidelines/en/" target="_blank" rel="noopener">Community Guidelines</a>.</li>
+      <li>You will not use ChannelStack to post content that would violate TikTok's Developer Terms or API policies.</li>
+      <li>TikTok may independently take action on your account (including removal of content or suspension) based on the content published via ChannelStack. ChannelStack is not liable for such actions.</li>
+      <li>You may revoke ChannelStack's access to your TikTok account at any time through TikTok's account settings. Revoking access will immediately stop automated posting to that account.</li>
+      <li>ChannelStack uses TikTok API data only as described in our <a href="/privacy">Privacy Policy</a> and consistent with TikTok's Platform Policy.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. Intellectual Property</h2>
+
+    <h3>7.1 ChannelStack IP</h3>
+    <p>All intellectual property in the ChannelStack platform, including but not limited to software, systems, automation workflows, documentation, templates, branding, and website content, is owned by or licensed to ChannelStack. These Terms do not grant you any rights to our intellectual property except as necessary to use the Service as permitted herein.</p>
+
+    <h3>7.2 Your Content</h3>
+    <p>You retain all rights to the content you create and publish through ChannelStack. By using the Service, you grant ChannelStack a limited, non-exclusive, royalty-free license to process, store, and transmit your content solely as necessary to provide the Service. We do not claim ownership of your content and will not use it for any purpose beyond operating the Service.</p>
+
+    <h3>7.3 AI-Generated Content</h3>
+    <p>ChannelStack may use AI tools (including OpenAI and Anthropic APIs) to generate video scripts and other content on your behalf. You acknowledge that AI-generated content may not be eligible for copyright protection in all jurisdictions and agree that you are responsible for reviewing and taking responsibility for AI-generated content before it is published under your account.</p>
+
+    <h3>7.4 Feedback</h3>
+    <p>If you submit ideas, suggestions, or feedback about ChannelStack, you grant us an unrestricted, irrevocable, perpetual license to use and incorporate such feedback into the Service without compensation to you.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Third-Party Services and Links</h2>
+    <p>ChannelStack integrates with and links to third-party services including TikTok, YouTube, GitHub, OpenAI, Anthropic, Pexels, and Skool. These third-party services are governed by their own terms of service and privacy policies, which you are responsible for reviewing and accepting.</p>
+    <p>ChannelStack is not responsible for the availability, accuracy, content, or practices of any third-party services. Any issues with third-party platform APIs, including downtime, rate limiting, or policy changes, may affect the Service and are outside our control.</p>
+    <p>The automation features in ChannelStack depend on third-party API access. We cannot guarantee uninterrupted access to third-party APIs, and changes to those APIs or their policies may require updates to ChannelStack that could temporarily or permanently affect certain features.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Disclaimers and Limitation of Liability</h2>
+
+    <div class="warning-box">
+      <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.</p>
+    </div>
+
+    <p>We do not warrant that the Service will be uninterrupted, error-free, or free from viruses or other harmful components. We do not warrant that automated content will be accepted, published, or remain published on any third-party platform.</p>
+
+    <p>ChannelStack does not guarantee any specific results from use of the Service, including but not limited to subscriber growth, revenue, monetization qualification, or video performance. Content creator results vary based on many factors outside our control.</p>
+
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL CHANNELSTACK BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFITS, LOST REVENUE, LOSS OF DATA, OR LOSS OF GOODWILL, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SERVICE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+    <p>OUR TOTAL AGGREGATE LIABILITY TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THESE TERMS OR THE SERVICE SHALL NOT EXCEED THE TOTAL AMOUNT YOU PAID TO CHANNELSTACK IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.</p>
+  </div>
+
+  <div class="section">
+    <h2>10. Indemnification</h2>
+    <p>You agree to indemnify, defend, and hold harmless ChannelStack and its operators, affiliates, employees, and agents from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or relating to:</p>
+    <ul>
+      <li>Your use of the Service in violation of these Terms</li>
+      <li>Content you publish or cause to be published through ChannelStack</li>
+      <li>Your violation of any applicable law, platform policy, or third-party rights</li>
+      <li>Your breach of any representation or warranty made in these Terms</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>11. Termination</h2>
+
+    <h3>11.1 Termination by You</h3>
+    <p>You may terminate your ChannelStack account at any time by cancelling your subscription through Skool and emailing <a href="mailto:matt@channelstack.net">matt@channelstack.net</a> to request account deletion. Upon termination, your access to the Service will cease at the end of your current billing period.</p>
+
+    <h3>11.2 Termination by ChannelStack</h3>
+    <p>We reserve the right to suspend or terminate your access to the Service immediately, with or without notice, if we reasonably believe that you have violated these Terms, engaged in fraudulent or harmful activity, or if continued provision of the Service to you creates legal risk for ChannelStack or harm to third parties.</p>
+
+    <h3>11.3 Effect of Termination</h3>
+    <p>Upon termination of your account for any reason:</p>
+    <ul>
+      <li>Your access to the Service will immediately cease</li>
+      <li>All OAuth tokens and automation credentials associated with your account will be deleted</li>
+      <li>Automated posting to your connected accounts will stop</li>
+      <li>Sections of these Terms that by their nature should survive termination will survive, including Sections 7, 9, 10, and 13</li>
+    </ul>
+    <p>Termination does not entitle you to a refund of any prepaid subscription fees unless required by applicable law.</p>
+  </div>
+
+  <div class="section">
+    <h2>12. Modifications to the Service and Terms</h2>
+    <p>We reserve the right to modify, suspend, or discontinue any part of the Service at any time, with reasonable notice where practicable. We will not be liable to you or any third party for any modification, suspension, or discontinuation of the Service.</p>
+    <p>We may update these Terms from time to time. When we make material changes, we will update the "Last updated" date and provide notice via our community platform or by email. Your continued use of the Service after such notice constitutes acceptance of the updated Terms. If you do not agree to updated Terms, your only recourse is to discontinue use of the Service and cancel your subscription.</p>
+  </div>
+
+  <div class="section">
+    <h2>13. Governing Law and Dispute Resolution</h2>
+    <p>These Terms are governed by and construed in accordance with the laws of the United States and the State of Illinois, without regard to its conflict of law provisions.</p>
+    <p>Any dispute arising out of or relating to these Terms or the Service shall first be addressed through good-faith negotiation. If the dispute cannot be resolved through negotiation within 30 days, the parties agree to binding arbitration administered under the American Arbitration Association's Consumer Arbitration Rules. The arbitration shall be conducted in Illinois or remotely. The arbitrator's decision shall be final and binding and may be entered as a judgment in any court of competent jurisdiction.</p>
+    <p>You waive any right to participate in a class action lawsuit or class-wide arbitration. Each dispute must be brought individually.</p>
+    <p>Notwithstanding the above, either party may seek injunctive or other equitable relief in any court of competent jurisdiction to prevent irreparable harm pending arbitration.</p>
+  </div>
+
+  <div class="section">
+    <h2>14. General Provisions</h2>
+
+    <h3>14.1 Entire Agreement</h3>
+    <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and ChannelStack regarding the Service and supersede all prior agreements and understandings, whether written or oral, relating to the same subject matter.</p>
+
+    <h3>14.2 Severability</h3>
+    <p>If any provision of these Terms is found to be invalid or unenforceable, that provision will be limited or eliminated to the minimum extent necessary, and the remaining provisions will continue in full force and effect.</p>
+
+    <h3>14.3 Waiver</h3>
+    <p>Our failure to enforce any provision of these Terms shall not be construed as a waiver of that provision or of any other provision.</p>
+
+    <h3>14.4 Assignment</h3>
+    <p>You may not assign or transfer your rights or obligations under these Terms without our prior written consent. We may assign our rights and obligations under these Terms without restriction.</p>
+
+    <h3>14.5 Force Majeure</h3>
+    <p>ChannelStack will not be liable for any failure or delay in performance due to circumstances beyond our reasonable control, including but not limited to third-party API outages, changes in platform policies, acts of God, or internet disruptions.</p>
+
+    <h3>14.6 No Agency</h3>
+    <p>Nothing in these Terms creates any agency, partnership, joint venture, or employment relationship between you and ChannelStack. You are an independent user of the Service.</p>
+  </div>
+
+  <div class="section">
+    <h2>15. Contact Us</h2>
+    <p>If you have any questions about these Terms of Service, please contact us:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:matt@channelstack.net">matt@channelstack.net</a></li>
+      <li><strong>Website:</strong> <a href="https://channelstack.net">channelstack.net</a></li>
+      <li><strong>Response time:</strong> We aim to respond to all inquiries within 5 business days.</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 ChannelStack &nbsp;·&nbsp; <a href="mailto:matt@channelstack.net">matt@channelstack.net</a> &nbsp;·&nbsp; <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms">Terms of Service</a>
+</footer>
+
+</body>
+</html>
