@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Authorization — ChannelStack</title>
+<link rel="icon" type="image/png" href="/logo-profile-800x800.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cyan: #00C9FF; --bg: #0D1117; --surface: #161B22;
+    --border: #21262D; --white: #FFFFFF; --muted: #AAAAAA; --dim: #555555;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 48px; max-width: 560px; width: 100%; text-align: center; }
+  .logo-icon { width: 56px; height: 56px; background: var(--cyan); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+  .logo-bars { display: flex; flex-direction: column; gap: 3px; padding: 9px 10px; width: 100%; }
+  .bar { height: 4px; background: #0D1117; border-radius: 2px; }
+  h1 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+  h1 span { color: var(--cyan); }
+  .subtitle { font-size: 15px; color: var(--muted); margin-bottom: 32px; }
+  .code-box { background: #0D1117; border: 1px solid var(--cyan); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; word-break: break-all; }
+  .code-box .label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan); margin-bottom: 10px; }
+  .code-value { font-family: monospace; font-size: 14px; color: var(--white); line-height: 1.6; }
+  .copy-btn { background: var(--cyan); color: #0D1117; font-weight: 700; border: none; padding: 12px 28px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: 'Inter', sans-serif; transition: opacity 0.2s; margin-bottom: 24px; }
+  .copy-btn:hover { opacity: 0.85; }
+  .copy-btn.copied { background: #2ea043; color: #fff; }
+  .instruction { font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .error-card { border-color: rgba(255,80,80,0.4); }
+  .error-card h1 { color: #ff6b6b; }
+</style>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="logo-icon">
+    <div class="logo-bars">
+      <div class="bar" style="width:100%"></div>
+      <div class="bar" style="width:68%"></div>
+      <div class="bar" style="width:100%"></div>
+      <div class="bar" style="width:100%"></div>
+    </div>
+  </div>
+  <h1>Channel<span>Stack</span></h1>
+  <p class="subtitle" id="subtitle">Reading authorization response...</p>
+  <div id="content"></div>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const code  = params.get('code');
+  const error = params.get('error');
+  const card  = document.getElementById('card');
+  const sub   = document.getElementById('subtitle');
+  const body  = document.getElementById('content');
+
+  if (code) {
+    sub.textContent = 'TikTok authorization successful. Copy the code below and paste it into your terminal.';
+    body.innerHTML = `
+      <div class="code-box">
+        <div class="label">Authorization Code</div>
+        <div class="code-value" id="code-val">${code}</div>
+      </div>
+      <button class="copy-btn" id="copyBtn" onclick="copyCode()">Copy Code</button>
+      <p class="instruction">Paste this code into your terminal where it says:<br><strong>"Paste the authorization code:"</strong></p>
+    `;
+  } else if (error) {
+    card.classList.add('error-card');
+    sub.textContent = 'Authorization was not completed.';
+    body.innerHTML = `<p class="instruction" style="color:#ff6b6b;">Error: ${error}<br><br>Close this tab and try running the script again.</p>`;
+  } else {
+    sub.textContent = 'No authorization data found in this URL.';
+    body.innerHTML = `<p class="instruction">This page is used by the ChannelStack automation system to complete TikTok OAuth. If you arrived here by mistake, <a href="/" style="color:var(--cyan);">go back to the homepage</a>.</p>`;
+  }
+
+  function copyCode() {
+    const code = document.getElementById('code-val').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy Code'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+</script>
+</body>
+</html>
