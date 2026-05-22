@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — ChannelStack</title>
+<link rel="icon" type="image/png" href="/logo-profile-800x800.png">
+<link rel="shortcut icon" type="image/png" href="/logo-profile-800x800.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cyan: #00C9FF;
+    --bg: #0D1117;
+    --surface: #161B22;
+    --border: #21262D;
+    --white: #FFFFFF;
+    --muted: #AAAAAA;
+    --dim: #555555;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(13,17,23,0.95);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-icon {
+    width: 36px; height: 36px; background: var(--cyan); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .logo-bars { display: flex; flex-direction: column; gap: 3px; padding: 7px 8px; width: 100%; }
+  .bar { height: 4px; background: #0D1117; border-radius: 2px; }
+  .bar-1 { width: 100%; }
+  .bar-2 { width: 68%; }
+  .bar-3 { width: 100%; }
+  .bar-4 { width: 100%; }
+  .logo-text { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; }
+  .logo-text span { color: var(--cyan); }
+  .nav-cta {
+    background: var(--cyan); color: #0D1117; font-weight: 700;
+    padding: 10px 24px; border-radius: 8px; text-decoration: none;
+    font-size: 14px; transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* CONTENT */
+  .page-header {
+    padding: 64px 24px 48px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--cyan); margin-bottom: 16px;
+  }
+  .page-title {
+    font-size: clamp(32px, 5vw, 52px); font-weight: 800;
+    letter-spacing: -1px; margin-bottom: 16px; line-height: 1.1;
+  }
+  .page-meta { font-size: 14px; color: var(--dim); }
+
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cyan);
+    margin: 24px 0 10px;
+  }
+
+  p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  ul {
+    margin: 0 0 14px 0;
+    padding-left: 20px;
+  }
+
+  ul li {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 6px;
+  }
+
+  a {
+    color: var(--cyan);
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+
+  .highlight-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .highlight-box p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  footer {
+    text-align: center; padding: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px; color: var(--dim);
+  }
+  footer a { color: var(--dim); text-decoration: none; }
+
+  @media (max-width: 640px) {
+    nav { padding: 16px 20px; }
+    .page-header { padding: 40px 20px 32px; }
+    .content { padding: 32px 20px 64px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-icon">
+      <div class="logo-bars">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+        <div class="bar bar-4"></div>
+      </div>
+    </div>
+    <div class="logo-text">Channel<span>Stack</span></div>
+  </a>
+  <div style="display:flex; gap:12px; align-items:center;">
+    <a href="/login" style="color:var(--muted); font-size:14px; font-weight:600; text-decoration:none; padding:10px 16px; border-radius:8px; border:1px solid var(--border);">Login</a>
+    <a href="https://www.skool.com/channelstack-2416" class="nav-cta">Join the Community →</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div style="display:flex; align-items:center; gap:16px; margin-bottom:24px;">
+    <div style="width:48px; height:48px; background:var(--cyan); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+      <div style="display:flex; flex-direction:column; gap:3px; padding:9px 10px; width:100%;">
+        <div style="height:4px; background:#0D1117; border-radius:2px; width:100%;"></div>
+        <div style="height:4px; background:#0D1117; border-radius:2px; width:68%;"></div>
+        <div style="height:4px; background:#0D1117; border-radius:2px; width:100%;"></div>
+        <div style="height:4px; background:#0D1117; border-radius:2px; width:100%;"></div>
+      </div>
+    </div>
+    <span style="font-size:20px; font-weight:800; letter-spacing:-0.3px;">Channel<span style="color:var(--cyan);">Stack</span></span>
+  </div>
+  <div class="page-label">Legal</div>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-meta">Last updated: May 13, 2026 &nbsp;·&nbsp; Effective: May 13, 2026</p>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <div class="highlight-box">
+    <p>ChannelStack is a content creator automation platform that enables users to schedule and auto-post videos to TikTok and YouTube. This Privacy Policy explains what information we collect, why we collect it, how we use it, and your rights regarding that information. We take your privacy seriously and comply with applicable data protection laws including GDPR and CCPA.</p>
+  </div>
+
+  <div class="section">
+    <h2>1. Who We Are</h2>
+    <p>ChannelStack ("we," "us," or "our") is operated by ChannelStack, accessible at <a href="https://channelstack.net">channelstack.net</a> and through our community platform at skool.com/channelstack. Our primary contact email is <a href="mailto:matt@channelstack.net">matt@channelstack.net</a>.</p>
+    <p>ChannelStack is a multi-creator automation tool that helps content creators script, produce, and automatically publish faceless videos to platforms including TikTok and YouTube. We act as a data controller with respect to personal data we collect directly, and as a data processor with respect to content data you provide for automation purposes.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Information We Collect</h2>
+
+    <h3>2.1 Information You Provide Directly</h3>
+    <ul>
+      <li><strong>Account information:</strong> Name, email address, and payment information when you join the ChannelStack community.</li>
+      <li><strong>Platform credentials:</strong> OAuth access tokens and refresh tokens for TikTok and YouTube accounts you connect to ChannelStack. These tokens authorize ChannelStack to post content on your behalf and are stored securely.</li>
+      <li><strong>Content data:</strong> Video files, scripts, metadata (titles, descriptions, tags), thumbnail images, and other content you provide or that ChannelStack generates on your behalf for automated posting.</li>
+      <li><strong>Communications:</strong> Messages you send to us via email or community platforms.</li>
+    </ul>
+
+    <h3>2.2 Information We Collect Automatically</h3>
+    <ul>
+      <li><strong>Usage data:</strong> Information about how you interact with our tools, including automation run logs, posting schedules, and system activity.</li>
+      <li><strong>Device and technical data:</strong> IP address, browser type, operating system, and referring URLs when you access our website.</li>
+      <li><strong>Error and diagnostic data:</strong> Logs generated when the automation system encounters errors, to help us diagnose and fix issues.</li>
+    </ul>
+
+    <h3>2.3 Information Received from Third-Party Platforms</h3>
+    <p>When you connect a TikTok or YouTube account to ChannelStack via OAuth, we receive limited profile information from those platforms consistent with the permissions you grant. For TikTok specifically, ChannelStack requests only the permissions necessary to post content on your behalf. We do not request access to your TikTok followers, messages, direct messages, or any data beyond what is strictly necessary for content publishing.</p>
+    <p>TikTok data received may include:</p>
+    <ul>
+      <li>Your TikTok username and open ID (to identify which account to post to)</li>
+      <li>Post creation permissions (to publish video content on your behalf)</li>
+    </ul>
+    <p>We do not access, store, or process any TikTok user data beyond the minimum required to authenticate and publish content.</p>
+  </div>
+
+  <div class="section">
+    <h2>3. How We Use Your Information</h2>
+    <p>We use the information we collect for the following purposes:</p>
+    <ul>
+      <li><strong>Service delivery:</strong> To authenticate your connected accounts and automatically post content to TikTok and YouTube on your behalf according to your configured schedule.</li>
+      <li><strong>Account management:</strong> To create and maintain your ChannelStack account, process payments, and communicate with you about your subscription.</li>
+      <li><strong>System monitoring:</strong> To monitor automation health, detect posting failures, and send alert notifications when action is required.</li>
+      <li><strong>Analytics and improvement:</strong> To understand how our tools are used and to improve ChannelStack's features, reliability, and performance.</li>
+      <li><strong>Legal compliance:</strong> To comply with applicable laws, respond to legal requests, and protect the rights and safety of ChannelStack and its users.</li>
+      <li><strong>Support:</strong> To respond to your questions, troubleshoot issues, and provide technical assistance.</li>
+    </ul>
+    <p>We do not sell your personal information. We do not use your TikTok data for advertising profiling or any purpose other than enabling the automation services you have requested.</p>
+  </div>
+
+  <div class="section">
+    <h2>4. Legal Basis for Processing (GDPR)</h2>
+    <p>If you are located in the European Economic Area (EEA) or United Kingdom, our legal basis for processing your personal data is as follows:</p>
+    <ul>
+      <li><strong>Contract performance:</strong> Processing your account data and OAuth tokens is necessary to deliver the automation services you have subscribed to.</li>
+      <li><strong>Legitimate interests:</strong> We process usage and diagnostic data to maintain the security and reliability of our service.</li>
+      <li><strong>Legal obligation:</strong> We may process data to comply with applicable laws and regulations.</li>
+      <li><strong>Consent:</strong> Where required by law, we will seek your explicit consent before processing, particularly for optional communications such as marketing emails.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>5. TikTok API Data Use Policy</h2>
+    <p>ChannelStack uses the TikTok Content Posting API to enable automated video publishing on behalf of connected creator accounts. Our use of TikTok API data is governed by the <a href="https://developers.tiktok.com/doc/overview" target="_blank" rel="noopener">TikTok Developer Terms of Service</a> and TikTok's Platform Policy.</p>
+    <p>Specifically regarding TikTok data:</p>
+    <ul>
+      <li>We access only the minimum permissions required to post content (Content Posting API scope).</li>
+      <li>We do not access private user data, follower lists, messages, or analytics beyond what is necessary for publishing.</li>
+      <li>TikTok OAuth tokens are stored in encrypted GitHub Actions secrets or equivalent secure storage and are never exposed in logs, public repositories, or third-party systems.</li>
+      <li>TikTok data is not shared with third parties except as described in Section 6 below.</li>
+      <li>TikTok data is deleted upon account disconnection or account termination as described in Section 9.</li>
+      <li>We do not use TikTok data to build profiles, target advertising, or any purpose beyond operating the content automation service.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>6. Sharing Your Information</h2>
+    <p>We do not sell your personal information. We may share information only in the following limited circumstances:</p>
+
+    <h3>6.1 Service Providers</h3>
+    <p>We use the following third-party services to operate ChannelStack. Each processes data only as necessary to provide their service:</p>
+    <ul>
+      <li><strong>GitHub Actions</strong> — Automation workflow execution and secret storage</li>
+      <li><strong>OpenAI</strong> — AI-generated script content (content text only; no personal identifiers)</li>
+      <li><strong>Anthropic</strong> — AI content generation fallback (content text only; no personal identifiers)</li>
+      <li><strong>Skool</strong> — Community platform and membership management</li>
+      <li><strong>Google (YouTube Data API)</strong> — Video publishing to connected YouTube accounts</li>
+      <li><strong>TikTok (Content Posting API)</strong> — Video publishing to connected TikTok accounts</li>
+      <li><strong>Pexels</strong> — Stock video and imagery sourcing</li>
+      <li><strong>Google Sheets / Gmail</strong> — Internal monitoring logs and alert delivery</li>
+    </ul>
+
+    <h3>6.2 Legal Requirements</h3>
+    <p>We may disclose information if required by law, court order, or governmental authority, or when we believe disclosure is necessary to protect our rights, your safety, or the safety of others.</p>
+
+    <h3>6.3 Business Transfers</h3>
+    <p>In the event of a merger, acquisition, or sale of all or substantially all of our assets, your information may be transferred as part of that transaction. We will provide notice before your personal information is transferred and becomes subject to a different privacy policy.</p>
+  </div>
+
+  <div class="section">
+    <h2>7. Data Retention</h2>
+    <p>We retain your personal data only for as long as necessary to provide our services and fulfill the purposes described in this policy:</p>
+    <ul>
+      <li><strong>Account data:</strong> Retained for the duration of your subscription plus 90 days following cancellation, to allow for account reactivation and final billing reconciliation.</li>
+      <li><strong>OAuth tokens:</strong> Retained while your account is active and the platform connection is enabled. Tokens are deleted immediately upon disconnection of the linked platform account or upon account termination.</li>
+      <li><strong>Content and posting logs:</strong> Retained for up to 12 months to support troubleshooting and performance review.</li>
+      <li><strong>Diagnostic and error logs:</strong> Retained for 30 days.</li>
+      <li><strong>Financial records:</strong> Retained for 7 years as required by applicable tax and accounting laws.</li>
+    </ul>
+    <p>Upon expiration of the applicable retention period, we securely delete or anonymize your data.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Security</h2>
+    <p>We implement industry-standard security measures to protect your personal information:</p>
+    <ul>
+      <li>OAuth tokens and API credentials are stored as encrypted secrets in GitHub Actions secret storage and are never committed to source code or exposed in logs.</li>
+      <li>All data in transit is encrypted using TLS 1.2 or higher.</li>
+      <li>Access to user data is restricted to authorized personnel only.</li>
+      <li>We conduct periodic reviews of our security practices and update them as necessary.</li>
+    </ul>
+    <p>Despite these measures, no transmission over the internet or electronic storage method is 100% secure. If you believe your data has been compromised, please contact us immediately at <a href="mailto:matt@channelstack.net">matt@channelstack.net</a>.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Your Rights</h2>
+
+    <h3>9.1 Rights Under GDPR (EEA / UK Residents)</h3>
+    <p>If you are located in the EEA or UK, you have the following rights:</p>
+    <ul>
+      <li><strong>Right of access:</strong> Request a copy of the personal data we hold about you.</li>
+      <li><strong>Right to rectification:</strong> Request correction of inaccurate or incomplete personal data.</li>
+      <li><strong>Right to erasure:</strong> Request deletion of your personal data ("right to be forgotten"), subject to certain legal obligations.</li>
+      <li><strong>Right to restriction:</strong> Request that we restrict the processing of your personal data in certain circumstances.</li>
+      <li><strong>Right to data portability:</strong> Request a machine-readable copy of the personal data you have provided to us.</li>
+      <li><strong>Right to object:</strong> Object to processing of your personal data based on legitimate interests.</li>
+      <li><strong>Right to withdraw consent:</strong> Where processing is based on consent, withdraw that consent at any time without affecting the lawfulness of prior processing.</li>
+      <li><strong>Right to lodge a complaint:</strong> Lodge a complaint with your local data protection supervisory authority.</li>
+    </ul>
+
+    <h3>9.2 Rights Under CCPA (California Residents)</h3>
+    <p>If you are a California resident, you have the following rights under the California Consumer Privacy Act:</p>
+    <ul>
+      <li><strong>Right to know:</strong> Request disclosure of the categories and specific pieces of personal information we have collected about you, the sources of collection, the business purposes for collection, and the categories of third parties with whom we share your information.</li>
+      <li><strong>Right to delete:</strong> Request deletion of personal information we have collected from you, subject to certain exceptions.</li>
+      <li><strong>Right to opt-out of sale:</strong> We do not sell personal information. There is no need to opt out.</li>
+      <li><strong>Right to non-discrimination:</strong> We will not discriminate against you for exercising any of your CCPA rights.</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <a href="mailto:matt@channelstack.net">matt@channelstack.net</a>. We will respond within 30 days (GDPR) or 45 days (CCPA) of receiving a verifiable request.</p>
+  </div>
+
+  <div class="section">
+    <h2>10. TikTok Data Deletion</h2>
+    <p>In compliance with TikTok's Platform Policy, we provide a clear mechanism for users to request deletion of all TikTok-related data held by ChannelStack:</p>
+    <ul>
+      <li>Email <a href="mailto:matt@channelstack.net">matt@channelstack.net</a> with the subject line "TikTok Data Deletion Request" and the TikTok username associated with your account.</li>
+      <li>We will delete all stored TikTok OAuth tokens and any TikTok-derived data within 30 days of receiving your request.</li>
+      <li>You may also revoke ChannelStack's access to your TikTok account at any time directly through your TikTok account settings under Settings → Security → Authorized Apps.</li>
+    </ul>
+    <p>Revoking access via TikTok settings immediately invalidates any stored tokens. ChannelStack's automated systems will detect the revocation and cease all posting activity for that account.</p>
+  </div>
+
+  <div class="section">
+    <h2>11. Cookies and Tracking</h2>
+    <p>Our website (channelstack.net) is a static informational page that does not set first-party cookies or use tracking pixels. We do not use Google Analytics or any behavioral advertising technology on our website.</p>
+    <p>Third-party platforms linked from our site (Skool, TikTok, YouTube) may use their own cookies in accordance with their respective privacy policies. We recommend reviewing those policies if you have concerns.</p>
+  </div>
+
+  <div class="section">
+    <h2>12. Children's Privacy</h2>
+    <p>ChannelStack is not directed to individuals under the age of 18. We do not knowingly collect personal information from minors. If you believe we have inadvertently collected information from a minor, please contact us at <a href="mailto:matt@channelstack.net">matt@channelstack.net</a> and we will promptly delete such information.</p>
+  </div>
+
+  <div class="section">
+    <h2>13. International Data Transfers</h2>
+    <p>ChannelStack operates in the United States. If you are accessing our services from outside the United States, please be aware that your information may be transferred to, stored, and processed in the United States, where data protection laws may differ from those in your jurisdiction.</p>
+    <p>For users in the EEA or UK, we rely on Standard Contractual Clauses or other approved transfer mechanisms to ensure that any international transfers of personal data receive an adequate level of protection.</p>
+  </div>
+
+  <div class="section">
+    <h2>14. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or for other operational reasons. When we make material changes, we will update the "Last updated" date at the top of this page and, where appropriate, notify you by email or via our community platform.</p>
+    <p>Your continued use of ChannelStack after any changes constitutes your acceptance of the updated Privacy Policy. We encourage you to review this page periodically.</p>
+  </div>
+
+  <div class="section">
+    <h2>15. Contact Us</h2>
+    <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:matt@channelstack.net">matt@channelstack.net</a></li>
+      <li><strong>Website:</strong> <a href="https://channelstack.net">channelstack.net</a></li>
+      <li><strong>Response time:</strong> We aim to respond to all privacy-related inquiries within 5 business days.</li>
+    </ul>
+    <p>For data deletion requests specifically, please include your full name, the email address associated with your ChannelStack account, and any connected platform usernames (TikTok, YouTube) in your request.</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 ChannelStack &nbsp;·&nbsp; <a href="mailto:matt@channelstack.net">matt@channelstack.net</a> &nbsp;·&nbsp; <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms">Terms of Service</a>
+</footer>
+
+</body>
+</html>
