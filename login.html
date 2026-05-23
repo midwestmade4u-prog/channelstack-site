@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login â ChannelStack</title>
+<title>Login Ã¢ÂÂ ChannelStack</title>
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEBUlEQVR4nM2X32scVRTHP+fOzO4m2fyyxioqpRoQgrFCVWxaCyJI+6AtAdFqfVDfBAUL/hE+GfDB1op9kCpR0NiKilQUW2uqBaXUShQfVFCrYNI2ze5m597jw50m+2N2M6sJ+H3Z5c7MOd97zveec4+gKogoAF/pOBFPY7kDSx8grA6UgEsI3wAvs1km/aqKoGr4DEMvB8jxJAosAm6VXF+BADkgAMocpp+nOEzV73BaX2M9T3AeCwiCWWX3HopDcAwR8geTjMkjwrTuoocpFohBQxBQBWezmTQmY6yMQZZSWqWHiHkeDYF9OBTFIAIKRALdof/fDt5gkMn/AlDFp0IJiFFgnzCt8xh6UPzOI0F+/43o2FsgLTWoAuKK/b/YjSNfY+MQpJmuWf5eh2+7R4vd66iiS5FQqiGSOAcf9q6Q6JO36Zp4Du3qBZuaChURoXL5KDAF9AmkvwhBCBdmD55Et23ZzQXnwPioCVHY9IUAcTXZQQDqSD2NIqhI7I8SorQUrlEQnI3TzNQTMAbKEI/tZPHnGc8dXdaCz5//DUJcceBeNzxqqZTzLcUoIohYvWnkTsreS/1+T2l97hxQBAZpXQsUmAfyQIGVxWqAWeBSo/vGCKhCXjA//ERu6iAEAXX0RJC4ihsc0ureZ4VfZ2eC708fR00OdS1oCBhxdtPYDh3sv46KU2RZnfUEEhGGn79H/vUX0O4+sHHz7m1V4x2PSXDu9Me9zz94xEIfreMVhDA3+8qJft2+dZwKjpqjuzYVrwM0iDCAEsTbd1H5+892KRC9eh3x6F33X3zx/a4sKdDhW7dQ8l7qn/6/ROigYDBnvyP/5kS7Y+gIQuOKA2fc8OixLMcwHtu5W4eu2kC5rQg9gfDkh+SOvIr2DIC9UsCb7Wp5/lNUP5IVRBjA3NyB49frjds2UK4XYXMlVCCMEkIWnJIaYxFENQkRKi0IKEmLM0GYZiZVhNX7HvI1oXUzEgFcsf8Bu3Hk2qzNiAXw5bbGUJMIFYiAbrK04+yobcc1SG9GVYXZNb2QtCHQxGaFF5xmuJBoko5me+kizAkUMtyIskKAMv6y2zYF6iBvMDPnyE++hAbBMql/6xgQa6k8/AzulhGoOJBlHabXgS8+IPfu/qQONDSjThGEyOU57A03s7hpBEoOglYEIKUO/McBQRIxh1FqJEOUBQzdKJ3Ugc6g6m2WWLoOJoiFU3qCAmOUUATTUR3ICqHxWu4oIFT4NkSZIGArggVMh3UgO0xQG1FLRESZCb/ypb7BevbwF7EfUNZwNAPHNYScZ4q7GffD6Y9EXOQQBfYQ48/raoW/Fjl8eku8g/A4RylLw3i+NxnPb8dSYHXH8wqGMyj72SyH/KrKP3OMs4M7GpaFAAAAAElFTkSuQmCC">
 <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEBUlEQVR4nM2X32scVRTHP+fOzO4m2fyyxioqpRoQgrFCVWxaCyJI+6AtAdFqfVDfBAUL/hE+GfDB1op9kCpR0NiKilQUW2uqBaXUShQfVFCrYNI2ze5m597jw50m+2N2M6sJ+H3Z5c7MOd97zveec4+gKogoAF/pOBFPY7kDSx8grA6UgEsI3wAvs1km/aqKoGr4DEMvB8jxJAosAm6VXF+BADkgAMocpp+nOEzV73BaX2M9T3AeCwiCWWX3HopDcAwR8geTjMkjwrTuoocpFohBQxBQBWezmTQmY6yMQZZSWqWHiHkeDYF9OBTFIAIKRALdof/fDt5gkMn/AlDFp0IJiFFgnzCt8xh6UPzOI0F+/43o2FsgLTWoAuKK/b/YjSNfY+MQpJmuWf5eh2+7R4vd66iiS5FQqiGSOAcf9q6Q6JO36Zp4Du3qBZuaChURoXL5KDAF9AmkvwhBCBdmD55Et23ZzQXnwPioCVHY9IUAcTXZQQDqSD2NIqhI7I8SorQUrlEQnI3TzNQTMAbKEI/tZPHnGc8dXdaCz5//DUJcceBeNzxqqZTzLcUoIohYvWnkTsreS/1+T2l97hxQBAZpXQsUmAfyQIGVxWqAWeBSo/vGCKhCXjA//ERu6iAEAXX0RJC4ihsc0ureZ4VfZ2eC708fR00OdS1oCBhxdtPYDh3sv46KU2RZnfUEEhGGn79H/vUX0O4+sHHz7m1V4x2PSXDu9Me9zz94xEIfreMVhDA3+8qJft2+dZwKjpqjuzYVrwM0iDCAEsTbd1H5+892KRC9eh3x6F33X3zx/a4sKdDhW7dQ8l7qn/6/ROigYDBnvyP/5kS7Y+gIQuOKA2fc8OixLMcwHtu5W4eu2kC5rQg9gfDkh+SOvIr2DIC9UsCb7Wp5/lNUP5IVRBjA3NyB49frjds2UK4XYXMlVCCMEkIWnJIaYxFENQkRKi0IKEmLM0GYZiZVhNX7HvI1oXUzEgFcsf8Bu3Hk2qzNiAXw5bbGUJMIFYiAbrK04+yobcc1SG9GVYXZNb2QtCHQxGaFF5xmuJBoko5me+kizAkUMtyIskKAMv6y2zYF6iBvMDPnyE++hAbBMql/6xgQa6k8/AzulhGoOJBlHabXgS8+IPfu/qQONDSjThGEyOU57A03s7hpBEoOglYEIKUO/McBQRIxh1FqJEOUBQzdKJ3Ugc6g6m2WWLoOJoiFU3qCAmOUUATTUR3ICqHxWu4oIFT4NkSZIGArggVMh3UgO0xQG1FLRESZCb/ypb7BevbwF7EfUNZwNAPHNYScZ4q7GffD6Y9EXOQQBfYQ48/raoW/Fjl8eku8g/A4RylLw3i+NxnPb8dSYHXH8wqGMyj72SyH/KrKP3OMs4M7GpaFAAAAAElFTkSuQmCC">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -223,7 +223,7 @@
     <div class="divider">or</div>
 
     <a href="https://www.skool.com/channelstack-2416" class="btn-primary">
-      Sign In with ChannelStack â
+      Sign In with ChannelStack Ã¢ÂÂ
     </a>
 
     <a href="https://www.skool.com/channelstack-2416" class="btn-secondary" style="margin-top:12px;">
@@ -239,7 +239,7 @@
 </div>
 
 <footer>
-  Â© 2026 ChannelStack &nbsp;Â·&nbsp; <a href="mailto:matt@channelstack.net">matt@channelstack.net</a> &nbsp;Â·&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;Â·&nbsp; <a href="/terms.html">Terms of Service</a>
+  ÃÂ© 2026 ChannelStack &nbsp;ÃÂ·&nbsp; <a href="mailto:matt@channelstack.net">matt@channelstack.net</a> &nbsp;ÃÂ·&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;ÃÂ·&nbsp; <a href="/terms.html">Terms of Service</a>
 </footer>
 
 </body>
