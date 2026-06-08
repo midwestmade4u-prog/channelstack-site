@@ -54,7 +54,7 @@
   const params   = new URLSearchParams(location.search);
   const actionId = params.get('id');
   const token    = params.get('token');
-  const type     = params.get('type') || 'approve';
+  const actionType = params.get('type') || 'approve';
   const pat      = params.get('pat');
 
   const el   = document.getElementById('status');
@@ -85,13 +85,13 @@
         },
         body: JSON.stringify({
           ref: 'main',
-          inputs: { action_id: actionId, token: token, type: type }
+          inputs: { action_id: actionId, action_type: actionType }
         })
       }
     );
 
     if (resp.status === 204) {
-      show('success', type === 'skip'
+      show('success', actionType === 'skip'
         ? 'Skipped — no changes will be made.'
         : 'Approved! Changes are being applied now.');
       meta.textContent = 'Action ' + actionId + ' triggered successfully';
