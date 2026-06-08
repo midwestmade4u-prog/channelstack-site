@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChannelStack IG — Action Approval</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, Arial, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo { color: #ffc800; font-size: 2em; margin-bottom: 8px; }
+    h1 { font-size: 1.3em; color: #fff; margin-bottom: 6px; }
+    p  { color: #888; font-size: 0.9em; margin-bottom: 24px; }
+    .status {
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 1em;
+      font-weight: bold;
+    }
+    .status.loading { background: #1a1a1a; color: #888; }
+    .status.success { background: #0d2b12; color: #4ade80; border: 1px solid #27ae60; }
+    .status.error   { background: #2b0d0d; color: #f87171; border: 1px solid #c0392b; }
+    .meta { margin-top: 16px; color: #555; font-size: 0.8em; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">📊</div>
+  <h1>ChannelStack IG</h1>
+  <p>Strategy Approval</p>
+  <div class="status loading" id="status">Processing your response...</div>
+  <div class="meta" id="meta"></div>
+</div>
+
+<script>
+(async () => {
+  const params   = new URLSearchParams(location.search);
+  const actionId = params.get('id');
+  const token    = params.get('token');
+  const type     = params.get('type') || 'approve';
+  const pat      = params.get('pat');
+
+  const el   = document.getElementById('status');
+  const meta = document.getElementById('meta');
+
+  function show(cls, msg) {
+    el.className = 'status ' + cls;
+    el.textContent = msg;
+  }
+
+  if (!actionId || !token || !pat) {
+    show('error', 'Missing parameters — this link may be incomplete.');
+    return;
+  }
+
+  meta.textContent = 'Action: ' + actionId;
+
+  try {
+    const resp = await fetch(
+      'https://api.github.com/repos/midwestmade4u-prog/channelstack-ig/actions/workflows/ig-action-executor.yml/dispatches',
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + pat,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json',
+          'X-GitHub-Api-Version': '2022-11-28',
+        },
+        body: JSON.stringify({
+          ref: 'main',
+          inputs: { action_id: actionId, token: token, type: type }
+        })
+      }
+    );
+
+    if (resp.status === 204) {
+      show('success', type === 'skip'
+        ? 'Skipped — no changes will be made.'
+        : 'Approved! Changes are being applied now.');
+      meta.textContent = 'Action ' + actionId + ' triggered successfully';
+    } else {
+      const body = await resp.text();
+      show('error', 'GitHub API error (' + resp.status + ')');
+      meta.textContent = body.slice(0, 200);
+    }
+  } catch (err) {
+    show('error', 'Network error: ' + err.message);
+  }
+})();
+</script>
+</body>
+</html>
